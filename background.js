@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(function() {
         conditions: [
           // When a page contains a <video> tag...
           new chrome.declarativeContent.PageStateMatcher({
-            pageUrl: { hostEquals: 'google.com'}
+            pageUrl: { hostEquals: 'www.google.com'}
           })
         ],
         // ... show the page action.
