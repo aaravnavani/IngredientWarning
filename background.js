@@ -21,15 +21,15 @@
 */
 
 
-
+//tab.url.indexOf('google.com') > -1
 // Called when the url of a tab changes.
 function checkForValidUrl(tabId, changeInfo, tab) {
-    // If the letter 'g' is found in the tab's URL...
-    if (tab.url.indexOf('g') > -1) {
-      // ... show the page action.
-      chrome.pageAction.show(tabId);
+    // If the tabs url starts with "http://specificsite.com"...
+    if (tab.url.indexOf('https://artofproblemsolving.com/') == 0) {
+        // ... show the page action.
+        chrome.pageAction.show(tabId);
     }
-  };
+};
   
   // Listen for any changes to the URL of any tab.
   chrome.tabs.onUpdated.addListener(checkForValidUrl);
