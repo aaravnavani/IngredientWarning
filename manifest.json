@@ -12,6 +12,8 @@
     "permissions" : [
       "tabs",
       "declarativeContent",
-      "storage"
+      "storage",
+      "scriptiing",
+      "activeTab"
     ]
   }
