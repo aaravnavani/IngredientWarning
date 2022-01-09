@@ -6,7 +6,7 @@
     "action": {
       "default_popup": "popup.html"
     },
-    "permissions": ["tabs", "*://*.google.com/*"],
+    "permissions": ["tabs"],
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
