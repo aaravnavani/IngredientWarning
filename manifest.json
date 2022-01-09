@@ -6,14 +6,13 @@
     "action": {
       "default_popup": "popup.html"
     },
-    "background":{
-      "service_worker": "background.js"
-    },
-    "permissions" : [
-      "tabs",
-      "declarativeContent",
-      "storage",
-      "scriptiing",
-      "activeTab"
+    "permissions": ["tabs", "*://*.google.com/*"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["hello.js"]
+      }
     ]
-  }
+  } 
+
+  

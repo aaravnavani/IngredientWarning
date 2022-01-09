@@ -1,4 +1,24 @@
 chrome.runtime.onInstalled.addListener(function() {
+  // Replace all rules ...
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, 
+function() {
+  // With a new rule ...
+  chrome.declarativeContent.onPageChanged.addRules([
+  {
+   // That fires when a page's URL contains a 'g' ...
+   conditions: [
+   new chrome.declarativeContent.PageStateMatcher({
+     pageUrl: { urlContains: 'google.com' },
+   })
+  ],
+   // And shows the extension's page action.
+   actions: [ new chrome.declarativeContent.ShowPageAction() ]
+ }
+]);
+});
+});
+
+/*chrome.runtime.onInstalled.addListener(function() {
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
       chrome.declarativeContent.onPageChanged.addRules([{
         conditions: [
@@ -13,7 +33,7 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 });
 
-
+*/
 
 
 //tab.url.indexOf('google.com') > -1
@@ -30,3 +50,5 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.tabs.onUpdated.addListener(checkForValidUrl);
   
 */
+
+// When the extension is installed or upgraded ...
