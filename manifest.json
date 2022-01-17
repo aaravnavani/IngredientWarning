@@ -9,11 +9,12 @@
     "background": {
       "service_worker": "background.js"
     },
-    "permissions": ["tabs", "storage"],
+    "permissions": ["tabs", "http://*/*"],
     "content_scripts": [
       {
         "matches": ["https://www.google.com/*", "https://github.com/*"],
-        "js": ["hello.js"]
+        "js": ["background.js", "hello.js"],
+        "html": ["popup.html"]
       }
     ]
   } 
