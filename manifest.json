@@ -3,20 +3,21 @@
     "description": "Extension that reads the ingredients off your foot items when shopping and warns you if you have any of the ingredients are not healthy!",
     "version": "1.0",
     "manifest_version": 3, 
-    "action": {
-      "default_popup": "popup.html"
-    },
     "background": {
       "service_worker": "background.js"
     },
-    "permissions": ["tabs", "http://*/*"],
-    "content_scripts": [
-      {
-        "matches": ["https://www.google.com/*", "https://github.com/*"],
-        "js": ["background.js", "hello.js"],
-        "html": ["popup.html"]
-      }
-    ]
-  } 
+
+    "permissions": [
+      "activeTab",
+      "<all_urls>",
+      "tabs",
+      "declarativeContent"
+    ],
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["background.js"],
+      "css": ["coupon.css"]
+    }]
+} 
 
   
