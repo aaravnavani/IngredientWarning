@@ -1,23 +1,22 @@
 {
-    "name": "Ingredient Warning",
-    "description": "Extension that reads the ingredients off your foot items when shopping and warns you if you have any of the ingredients are not healthy!",
-    "version": "1.0",
-    "manifest_version": 3, 
+    "name": "IngredientWarning",
+    "description": "An extension that warns you if the stuff you are ordering has any bad ingredients!",
+    "version": "0.1.0",
+    "manifest_version": 3,
     "background": {
-      "service_worker": "background.js"
+        "service_worker": "background.js"
     },
-
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
     "permissions": [
-      "activeTab",
-      "<all_urls>",
-      "tabs",
-      "declarativeContent"
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs"
     ],
-    "content_scripts": [{
-      "matches": ["<all_urls>"],
-      "js": ["background.js"],
-      "css": ["coupon.css"]
-    }]
-} 
-
-  
+    "host_permissions": [
+        "https://www.google.com/*"
+    ]
+}
